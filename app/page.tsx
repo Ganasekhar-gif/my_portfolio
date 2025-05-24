@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
 import { Github, Linkedin } from "lucide-react";
 import { TooltipProps } from 'recharts';
+import { Analytics } from "@vercel/analytics/next"
 
 const projects = [
   {

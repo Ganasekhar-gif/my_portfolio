@@ -125,20 +125,19 @@ const skillData = {
   ]
 };
 
-
 const levelToValue = {
   Beginner: 1,
   Intermediate: 2,
   Advanced: 3,
   Expert: 4,
-};
+} as const;
 
 const valueToLevel = {
   1: "Beginner",
   2: "Intermediate",
   3: "Advanced",
   4: "Expert",
-};
+} as const;
 
 interface CustomTooltipProps extends TooltipProps<number, string> {
   active?: boolean;
@@ -155,7 +154,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label })
     return (
       <div className="bg-white p-2 rounded shadow text-sm text-black">
         <p><strong>{payload[0].name}</strong></p>
-        <p>Proficiency: <strong>{valueToLevel[value]}</strong></p>
+        <p>Proficiency: <strong>{valueToLevel[value as keyof typeof valueToLevel]}</strong></p>
       </div>
     );
   }
@@ -250,12 +249,12 @@ const App: React.FC = () => {
   // Number of projects
   const projectCount = projects.length;
 
-  const [category, setCategory] = useState('Data Science');
+  const [category, setCategory] = useState<keyof typeof skillData>('Data Science');
   const [chartType, setChartType] = useState('Bar');
 
-  const data = skillData[category].map(skill => ({
+  const data = (skillData[category] ?? []).map(skill => ({
     name: skill.name,
-    value: levelToValue[skill.level]
+    value: levelToValue[skill.level as keyof typeof levelToValue],
   }));
 
   useEffect(() => {
@@ -263,7 +262,6 @@ const App: React.FC = () => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
-
 
   const [loopNum, setLoopNum] = useState(0);
 
@@ -436,7 +434,7 @@ const App: React.FC = () => {
             <select
               className="px-4 py-2 rounded-lg border dark:bg-gray-800 dark:text-white"
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => setCategory(e.target.value as keyof typeof skillData)}
             >
               {Object.keys(skillData).map(cat => (
                 <option key={cat} value={cat}>{cat}</option>
@@ -473,7 +471,7 @@ const App: React.FC = () => {
                   radius={[0, 10, 10, 0]}
                   label={({ x, y, width, value }) => (
                     <text x={x + width + 5} y={y + 10} fill="#9B59B6" fontSize={12}>
-                      {valueToLevel[value]}
+                      {valueToLevel[value as keyof typeof valueToLevel]}
                     </text>
                   )}
                 />

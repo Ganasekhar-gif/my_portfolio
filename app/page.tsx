@@ -324,7 +324,7 @@ const App: React.FC = () => {
         <img
           src="/loader.gif"
           alt="Loading..."
-          className="w-24 h-24 animate-pulse"
+          className="w-80 h-80 animate-pulse"
         />
       </div>
     );

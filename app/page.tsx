@@ -266,7 +266,7 @@ interface Bubble {
 
 interface FloatingSkillBubbleProps {
   bubble: Bubble;
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 const FloatingSkillBubble: React.FC<FloatingSkillBubbleProps> = ({
@@ -308,7 +308,7 @@ const FloatingSkillBubble: React.FC<FloatingSkillBubbleProps> = ({
 
 const FloatingSkillsContainer: React.FC<{
   skills: Array<{ name: string; level: string }>;
-  containerRef: React.RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
 }> = ({ skills, containerRef }) => {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
 

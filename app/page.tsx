@@ -8,81 +8,86 @@ import { Link as ScrollLink } from "react-scroll";
 import { Github, Linkedin } from "lucide-react";
 import { TooltipProps } from 'recharts';
 import { Analytics } from "@vercel/analytics/next"
+import { SiKaggle } from "react-icons/si";
+
 
 const projects = [
   {
-    title: "Real-Time Fraud Detection System",
+    title: "Real-Time Credit Card Fraud Detection System",
     desc:
-      "Designed an end-to-end real-time fraud detection pipeline using Kafka, Spark Streaming, and MongoDB. Integrated Prometheus & Grafana for system monitoring and alerting to ensure high availability and quick response.",
+      "Developed an end-to-end fraud detection pipeline using Kafka, Spark Streaming, and MongoDB to process live transactions. Integrated Prometheus and Grafana for monitoring, enabling real-time anomaly detection and system reliability.",
     link: "https://github.com/Ganasekhar-gif/real-time-credit-card-fraud-detection-system.git",
   },
   {
-    title: "Multi-Disease Detection with Deep Learning",
+    title: "AI-Powered Multi-Disease Detection System",
     desc:
-      "Developed a medical image classification system using VGG16 to detect multiple diseases from chest X-rays and other clinical images, enabling rapid and accurate diagnosis.",
+      "Built a deep learning model with VGG16 to identify multiple diseases from chest X-rays and clinical images. Enhanced model accuracy through image preprocessing and data augmentation for robust medical diagnosis.",
     link: "https://github.com/Ganasekhar-gif/multi-disease-detection.git",
   },
   {
-    title: "Smart Supply Chain Optimization",
+    title: "AI-Driven Multi-Agent Data Analytics Platform",
     desc:
-      "Built a decision-making system using linear programming and machine learning to optimize logistics, reduce transportation costs, and balance inventory across distribution networks.",
-    link: "https://github.com/Ganasekhar-gif/supply_chain_optimization.git",
+      "Designed a multi-agent architecture where AI agents collaborate to automate data collection, preprocessing, and visualization. Each agent specializes in distinct analytics tasks, optimizing data pipelines and decision-making efficiency.",
+    link: "https://github.com/Ganasekhar-gif/AI_Powered_Real-Time_Data_Analyst_agent.git",
   },
   {
-    title: "MCP AI Ed-Tech Assistant",
+    title: "Intelligent Code Review & Contributor Assistant",
     desc:
-      "Engineered an AI-powered educational chatbot using LLMs and NLP that personalizes content and answers student queries, improving accessibility to quality education.",
-    link: "https://github.com/Ganasekhar-gif/mcp-edtech-agent.git",
+      "Created an AI assistant that performs automated code reviews, detects performance or security issues, and provides contribution guidance. Integrated NLP and static code analysis to enhance collaboration in open-source workflows.",
+    link: "https://github.com/Ganasekhar-gif/ai-code-review-agent.git",
   },
   {
-    title: "Internship Recommendation Agent",
+    title: "AI-Based Risk Management & Privacy Chat App",
     desc:
-      "Created an intelligent system that analyzes resumes, skillsets, and interests to recommend personalized internships using machine learning and web scraping.",
-    link: "https://github.com/Ganasekhar-gif/Internship_Hunting_Agent.git",
+      "Developed a secure chat application powered by NLP that identifies privacy risks in real time and provides user safety recommendations. Combines AI-driven content analysis with end-to-end encryption for safe digital communication.",
+    link: "https://github.com/Ganasekhar-gif/ai-code-review-agent.git",
   },
 ];
 
+
 const experience = [
+  {
+    title: "AI & Machine Learning Intern",
+    org: "IBM SkillsBuild",
+    desc:
+      "Developed a hybrid movie recommendation system similar to Netflix using scikit-learn models, FAISS, and MySQL. Deployed the model with FastAPI for real-time recommendations, improving personalization and scalability.",
+  },
   {
     title: "AI Transformative Learning Intern",
     org: "Microsoft & Edunet Foundation",
     desc:
-      "Collaborated on AI-powered applications and streaming ML workflows. Gained hands-on experience deploying scalable, intelligent systems aligned with industrial best practices.",
+      "Built an ATS Resume Score Predictor using NLP and TF-IDF to match resumes with job descriptions. Designed a Streamlit frontend to let users check and improve their resume scores instantly.",
   },
   {
-    title: "Data Analytics Intern",
+    title: "Data Analytics Intern (LLMs Integration)",
     org: "Edunet Foundation",
     desc:
-      "Analyzed large-scale datasets using Pandas, Spark & LLMs. Delivered actionable insights through preprocessing, visualization, and exploratory data analysis.",
-  },
-  {
-    title: "Android Developer Intern",
-    org: "Internslite",
-    desc:
-      "Built modular Android applications with intuitive UIs using Java and XML. Enhanced user experience through responsive design and optimized app performance.",
+      "Worked on a sales analytics project combining data analysis and visualization. Created interactive Power BI dashboards that highlighted sales performance, trends, and key business insights.",
   },
 ];
 
+
 const oss = [
+  {
+    title: "Scikit-learn Contributor",
+    desc:
+      "Improved import structure and documentation to make the library easier to navigate and maintain. Helped enhance overall code readability and user understanding of core modules.",
+    link: "https://github.com/scikit-learn/scikit-learn/pull/32346#event-20063249559", 
+  },
   {
     title: "Braindecode Contributor",
     desc:
-      "Developed dynamic tag filtering and fixed dropdown bugs, enhancing UI interactivity and accuracy. Improved frontend docs with reStructuredText.",
+      "Added a dropdown filter and search feature to help users quickly find deep learning models. Improved interface usability and made documentation more accessible for new contributors.",
     link: "https://github.com/braindecode/braindecode/pull/718",
   },
   {
     title: "MNE-Python Contributor",
     desc:
-      "Authored a merged tutorial to create MNE core objects (Info, Epochs, Evoked) from NumPy. Enabled EEG simulation and visualization for education and testing.",
+      "Enhanced tutorials and educational resources to simplify onboarding for new users. Proposed improvements for creating MNE data structures and visualizing EEG data using NumPy arrays.",
     link: "https://github.com/Ganasekhar-gif/mne-python/pull/1",
   },
-  {
-    title: "ICA Benchmarking – MNE-Python",
-    desc:
-      "Benchmarked FastICA vs. Infomax on noisy MEG data. Improved EOG artifact clarity and interpretability. Refined metrics and examples for enhanced learning.",
-    link: "https://github.com/mne-tools/mne-python/pull/13215",
-  },
 ];
+
 
 
 const skillData = {
@@ -90,41 +95,35 @@ const skillData = {
     { name: "Python", level: "Expert" },
     { name: "Pandas", level: "Expert" },
     { name: "NumPy", level: "Expert" },
+    { name: "Scikit-learn", level: "Advanced" },
     { name: "SQL", level: "Intermediate" },
     { name: "Power BI", level: "Intermediate" },
     { name: "Matplotlib", level: "Intermediate" },
-    { name: "Seaborn", level: "Intermediate" },
-    { name: "Scikit-learn", level: "Advanced" },
-    { name: "StatsModels", level: "Beginner" },  
-    { name: "Excel", level: "Intermediate" }     
+    { name: "Seaborn", level: "Intermediate" }
   ],
 
-  "AI Frameworks": [
-    { name: "Machine Learning", level: "Expert" },
+  "AI & Machine Learning": [
+    { name: "Machine Learning", level: "Advanced" },
     { name: "Deep Learning", level: "Advanced" },
-    { name: "NLP", level: "Advanced" },
-    { name: "LLMs", level: "Intermediate" },
-    { name: "AI Agents", level: "Intermediate" },
-    { name: "Langchain", level: "Beginner" },
-    { name: "PyTorch", level: "Intermediate" },    
-    { name: "TensorFlow", level: "Beginner" },      
-    { name: "Transformers (Hugging Face)", level: "Intermediate" } 
+    { name: "Natural Language Processing (NLP)", level: "Advanced" },
+    { name: "Large Language Models (LLMs)", level: "Intermediate" },
+    { name: "PyTorch", level: "Beginner" },
+    { name: "TensorFlow", level: "Intermediate" },
+    { name: "Hugging Face Transformers", level: "Intermediate" }
   ],
 
-  "Technologies & Tools": [
-    { name: "Kafka", level: "Intermediate" },
-    { name: "Spark", level: "Intermediate" },
+  "Tools & Technologies": [
+    { name: "Apache Kafka", level: "Beginner" },
+    { name: "Apache Spark", level: "Intermediate" },
     { name: "MongoDB", level: "Intermediate" },
+    { name: "PostgreSQL", level: "Intermediate" },
     { name: "Docker", level: "Intermediate" },
-    { name: "Kubernetes", level: "Beginner" },
-    { name: "Git", level: "Expert" },
     { name: "MLOps", level: "Intermediate" },
-    { name: "MCP", level: "Intermediate" },
-    { name: "Linux", level: "Intermediate" },       
-    { name: "VS Code", level: "Intermediate" },      
-    { name: "Jupyter Notebook", level: "Expert" }   
+    { name: "Git", level: "Advanced" },
+    { name: "Jupyter Notebook", level: "Expert" }
   ]
 };
+
 
 const levelToValue = {
   Beginner: 1,
@@ -164,35 +163,52 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label })
 
 const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042'];
 
-const testimonials = [
+const achievements = [
   {
-    name: "Dr. Arjun Reddy",
-    title: "AI Researcher, Edunet Foundation",
-    quote:
-      "Ganasekhar's ability to integrate real-time ML systems with ease is phenomenal. A true asset to any team.",
+    title: "Kaggle Store Sales Forecasting Challenge",
+    desc: "Placed in the top 20% among global participants for building robust feature engineering and predictive modeling workflows.",
+    link: "https://www.kaggle.com/competitions/store-sales-time-series-forecasting",
   },
   {
-    name: "Priya Sharma",
-    title: "Project Mentor, Internslite",
-    quote:
-      "He always exceeded expectations, whether optimizing Android apps or solving complex data tasks.",
+    title: "Naukri CodeQuetz Coding Challenge",
+    desc: "Ranked 266 out of 29,000+ participants for problem-solving and algorithmic efficiency.",
+    link: "https://www.naukri.com/code360/",
   },
 ];
 
+const resume = {
+  url: "/my_res--.pdf",
+  desc: "Download my latest resume for a comprehensive overview of my experience, skills, and achievements."
+};
+
 const certificates = [
   {
-    title: "Microsoft AI Fundamentals",
-    desc: "Gained foundational knowledge in AI concepts, responsible AI, and real-world applications of Azure AI services.",
-    link: "https://drive.google.com/file/d/1XeQxB4jreSQ0PVueFQDUFSYUQtNpQj1W/view",
-    image: "/microsoft-cert.png",
-    logo: "/microsoft-logo.png", 
+    title: "AI & Machine Learning Intern",
+    desc: "Completed an internship at IBM where I built a hybrid movie recommendation system using Scikit-learn, FAISS, FastAPI, and MySQL. Gained hands-on experience in deploying AI models for real-world applications.",
+    link: "https://drive.google.com/file/d/your-ibm-internship-certificate-link/view",
+    image: "/ibm-aiml-cert.png",
+    logo: "/ibm-logo.png",
   },
   {
-    title: "Data Analytics Professional",
-    desc: "Mastered data wrangling, visualization, and storytelling using tools like Pandas, SQL, and Excel. Aligned with AICTE & VOIS Tech Program.",
+    title: "Microsoft AI Transformative Learning Program",
+    desc: "Developed an ATS Resume Score Predictor using NLP and TF-IDF during the internship. Learned to apply AI concepts in practical scenarios under Microsoft & Edunet Foundation.",
+    link: "https://drive.google.com/file/d/1XeQxB4jreSQ0PVueFQDUFSYUQtNpQj1W/view",
+    image: "/microsoft-cert.png",
+    logo: "/microsoft-logo.png",
+  },
+  {
+    title: "Data Analytics Internship Using AI & LLMs",
+    desc: "Worked on a Sales Analytics project using Power BI, performing data cleaning, analysis, and dashboard creation to uncover key business insights.",
     link: "https://drive.google.com/file/d/1jzdOffrz2LGrQg5EOudEfvLcl4FDzA9b/view",
     image: "/analytics-cert.png",
-    logo: "/vi-logo.png", 
+    logo: "/vi-logo.png",
+  },
+  {
+    title: "IBM Big Data Foundations",
+    desc: "Earned foundational certification from IBM covering Hadoop, Spark, and large-scale data processing. Learned to handle, store, and analyze massive datasets efficiently.",
+    link: "https://drive.google.com/file/d/your-ibm-big-data-certificate-link/view",
+    image: "/ibm-bigdata-cert.png",
+    logo: "/ibm-logo.png",
   },
 ];
 
@@ -209,11 +225,11 @@ interface Experience {
   desc: string;
 }
 
-interface Testimonial {
-  name: string;
-  title: string;
-  quote: string;
-}
+// interface Testimonial {
+//   name: string;
+//   title: string;
+//   quote: string;
+// }
 
 const typewriterTexts = [
   "Hi, I'm Ganasekhar Kalla — curious mind, driven by data.",
@@ -238,6 +254,197 @@ const interests = [
 ];
 
 
+interface Bubble {
+  id: number;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  size: number;
+  skill: { name: string; level: string };
+}
+
+interface FloatingSkillBubbleProps {
+  bubble: Bubble;
+  containerRef: React.RefObject<HTMLDivElement>;
+}
+
+const FloatingSkillBubble: React.FC<FloatingSkillBubbleProps> = ({
+  bubble,
+  containerRef
+}) => {
+  return (
+    <motion.div
+      className="absolute flex items-center justify-center rounded-full font-semibold 
+                 text-white text-xs shadow-md cursor-pointer select-none px-2"
+      animate={{
+        x: bubble.x,
+        y: bubble.y
+      }}
+      transition={{ duration: 0.05, ease: "linear" }}
+      whileHover={{
+        scale: 1.2,
+        boxShadow: "0 0 30px 10px #6366f1"
+      }}
+      style={{
+        width: bubble.size,
+        height: bubble.size,
+        background: "linear-gradient(135deg, #6366f1 60%, #a5b4fc 100%)",
+        border: "3px solid #fff"
+      }}
+    >
+      <span className="text-center leading-tight break-words" style={{ 
+        fontSize: bubble.size < 90 ? '0.65rem' : bubble.size < 110 ? '0.7rem' : '0.75rem',
+        padding: '4px',
+        wordBreak: 'break-word',
+        overflowWrap: 'break-word',
+        textAlign: 'center'
+      }}>
+        {bubble.skill.name}
+      </span>
+    </motion.div>
+  );
+};
+
+const FloatingSkillsContainer: React.FC<{
+  skills: Array<{ name: string; level: string }>;
+  containerRef: React.RefObject<HTMLDivElement>;
+}> = ({ skills, containerRef }) => {
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const container = containerRef.current;
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+
+    // Initialize bubbles
+    const initialBubbles: Bubble[] = skills.map((skill, index) => {
+      const bubbleSize =
+        70 +
+        10 *
+          (skill.level === "Expert"
+            ? 2
+            : skill.level === "Advanced"
+            ? 1.5
+            : skill.level === "Intermediate"
+            ? 1
+            : 0.7);
+
+      return {
+        id: index,
+        x: Math.random() * (containerWidth - bubbleSize),
+        y: Math.random() * (containerHeight - bubbleSize),
+        vx: (Math.random() - 0.5) * 2 + (Math.random() > 0.5 ? 1 : -1),
+        vy: (Math.random() - 0.5) * 2 + (Math.random() > 0.5 ? 1 : -1),
+        size: bubbleSize,
+        skill
+      };
+    });
+
+    setBubbles(initialBubbles);
+
+    let animationFrame: number;
+
+    const animate = () => {
+      setBubbles(prevBubbles => {
+        const newBubbles = prevBubbles.map(bubble => {
+          let newX = bubble.x + bubble.vx;
+          let newY = bubble.y + bubble.vy;
+          let newVx = bubble.vx;
+          let newVy = bubble.vy;
+
+          // Wall collision with proper bouncing
+          if (newX <= 0) {
+            newVx = Math.abs(newVx);
+            newX = 0;
+          } else if (newX >= containerWidth - bubble.size) {
+            newVx = -Math.abs(newVx);
+            newX = containerWidth - bubble.size;
+          }
+
+          if (newY <= 0) {
+            newVy = Math.abs(newVy);
+            newY = 0;
+          } else if (newY >= containerHeight - bubble.size) {
+            newVy = -Math.abs(newVy);
+            newY = containerHeight - bubble.size;
+          }
+
+          return { ...bubble, x: newX, y: newY, vx: newVx, vy: newVy };
+        });
+
+        // Collision detection between bubbles
+        for (let i = 0; i < newBubbles.length; i++) {
+          for (let j = i + 1; j < newBubbles.length; j++) {
+            const b1 = newBubbles[i];
+            const b2 = newBubbles[j];
+
+            const dx = b2.x - b1.x;
+            const dy = b2.y - b1.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const minDistance = (b1.size + b2.size) / 2;
+
+            if (distance < minDistance && distance > 0) {
+              // Collision detected - swap velocities for opposite direction movement
+              const angle = Math.atan2(dy, dx);
+              const sin = Math.sin(angle);
+              const cos = Math.cos(angle);
+
+              // Rotate velocities
+              const vx1 = b1.vx * cos + b1.vy * sin;
+              const vy1 = b1.vy * cos - b1.vx * sin;
+              const vx2 = b2.vx * cos + b2.vy * sin;
+              const vy2 = b2.vy * cos - b2.vx * sin;
+
+              // Swap velocities
+              const finalVx1 = vx2;
+              const finalVx2 = vx1;
+
+              // Rotate back
+              newBubbles[i].vx = finalVx1 * cos - vy1 * sin;
+              newBubbles[i].vy = vy1 * cos + finalVx1 * sin;
+              newBubbles[j].vx = finalVx2 * cos - vy2 * sin;
+              newBubbles[j].vy = vy2 * cos + finalVx2 * sin;
+
+              // Separate bubbles to prevent overlap
+              const overlap = minDistance - distance;
+              const separationX = (dx / distance) * overlap * 0.5;
+              const separationY = (dy / distance) * overlap * 0.5;
+
+              newBubbles[i].x -= separationX;
+              newBubbles[i].y -= separationY;
+              newBubbles[j].x += separationX;
+              newBubbles[j].y += separationY;
+            }
+          }
+        }
+
+        return newBubbles;
+      });
+
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [skills, containerRef]);
+
+  return (
+    <>
+      {bubbles.map(bubble => (
+        <FloatingSkillBubble key={bubble.id} bubble={bubble} containerRef={containerRef} />
+      ))}
+    </>
+  );
+};
+
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [loading, setLoading] = useState(true);
@@ -246,6 +453,7 @@ const App: React.FC = () => {
   const [typewriterIndex, setTypewriterIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Number of projects
   const projectCount = projects.length;
@@ -297,7 +505,7 @@ const App: React.FC = () => {
       }
     };
 
-    const timer = setTimeout(handleTyping, isDeleting ? deleteSpeed : typeSpeed);
+  const timer = setTimeout(handleTyping, isDeleting ? deleteSpeed : typeSpeed);
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, loopNum]);
 
@@ -333,6 +541,7 @@ const App: React.FC = () => {
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-all">
+
         {/* Navbar */}
         <nav className="sticky top-0 z-50 flex justify-between items-center p-4 bg-white dark:bg-gray-800 shadow">
           <h1 className="text-xl font-bold truncate max-w-[10rem]">
@@ -347,19 +556,21 @@ const App: React.FC = () => {
               "experience",
               "certificates",
               "oss",
-              "testimonials",
-              "contact",
-            ].map((section) => (
+              "achievements",
+              "resume",
+              "contact"
+            ].map((item) => (
               <ScrollLink
-                key={section}
-                to={section}
+                key={item}
+                to={item}
                 smooth={true}
                 duration={500}
-                className="cursor-pointer hover:text-blue-500 transition-colors"
+                className="cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
+                {item.charAt(0).toUpperCase() + item.slice(1)}
               </ScrollLink>
             ))}
+
             <button
               onClick={toggleDarkMode}
               className="ml-4 px-3 py-1 bg-blue-600 text-white rounded-full"
@@ -382,6 +593,7 @@ const App: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           />
+
           <div className="min-h-[80px] text-2xl md:text-4xl font-bold">
             <span className="text-blue-300">
               {currentText}
@@ -390,8 +602,8 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Interests and Goals */}
-        <section className="px-6 py-14 bg-gradient-to-b from-black to-gray-900 text-white">
+        {/* Interests */}
+        <section id="interests" className="px-6 py-14 bg-gradient-to-b from-black to-gray-900 text-white">
           <motion.h2
             className="text-3xl md:text-4xl font-bold mb-8 text-blue-400 text-center"
             initial={{ opacity: 0, y: -30 }}
@@ -428,7 +640,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Skills */}
-        <section className="p-10 max-w-5xl mx-auto">
+        <section id="skills" className="p-10 max-w-5xl mx-auto">
           <h3 className="text-3xl font-semibold mb-6 text-center">Skills Overview</h3>
 
           <div className="flex flex-col md:flex-row justify-center gap-4 mb-6">
@@ -441,65 +653,22 @@ const App: React.FC = () => {
                 <option key={cat} value={cat}>{cat}</option>
               ))}
             </select>
-
-            <select
-              className="px-4 py-2 rounded-lg border dark:bg-gray-800 dark:text-white"
-              value={chartType}
-              onChange={(e) => setChartType(e.target.value)}
-            >
-              <option value="Bar">Bar Chart</option>
-              <option value="Pie">Pie Chart</option>
-            </select>
           </div>
 
-          <ResponsiveContainer width="100%" height={350}>
-            {chartType === 'Bar' ? (
-              <BarChart
-                data={data}
-                layout="vertical"
-                margin={{ top: 5, right: 50, left: 100, bottom: 5 }} 
-              >
-                <XAxis type="number" domain={[0, 4]} hide />
-                <YAxis
-                  dataKey="name"
-                  type="category"
-                  tick={{ fill: '#9B59B6', fontSize: 14 }} 
-                />
-                <Tooltip content={<CustomTooltip />} />
-                <Bar
-                  dataKey="value"
-                  fill="#4f46e5"
-                  radius={[0, 10, 10, 0]}
-                  label={({ x, y, width, value }) => (
-                    <text x={x + width + 5} y={y + 10} fill="#9B59B6" fontSize={12}>
-                      {valueToLevel[value as keyof typeof valueToLevel]}
-                    </text>
-                  )}
-                />
-              </BarChart>
-            ) : (
-              <PieChart>
-                <Pie
-                  data={data}
-                  dataKey="value"
-                  nameKey="name"
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={130}
-                  fill="#8884d8"
-                  label={({ name }) => name}
-                >
-                  {data.map((_, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip content={<CustomTooltip />} />
-              </PieChart>
-            )}
-          </ResponsiveContainer>
+          <div
+            ref={containerRef}
+            className="relative w-full h-[500px] bg-gradient-to-br from-blue-200/40 
+                       to-purple-200/40 dark:from-gray-800 dark:to-gray-900 
+                       rounded-xl overflow-hidden"
+          >
+            <FloatingSkillsContainer
+              skills={skillData[category]}
+              containerRef={containerRef}
+            />
+          </div>
         </section>
 
-        {/* Projects */}
+        {/* Projects Section */}
         <section
           id="projects"
           className="p-10 max-w-6xl mx-auto text-center relative overflow-hidden"
@@ -570,162 +739,225 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Experience */}
-        <section id="experience" className="p-10 max-w-4xl mx-auto">
-          <h3 className="text-3xl font-semibold mb-6">Experience</h3>
-          {experience.map((exp, idx) => (
-            <motion.div
-              key={idx}
-              className="mb-4 p-4 border border-gray-300 dark:border-gray-700 rounded hover:scale-105 transition-transform duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-xl font-semibold">
-                {exp.title} <span className="text-gray-500">- {exp.org}</span>
-              </h4>
-              <p className="mt-1 text-gray-700 dark:text-gray-300">{exp.desc}</p>
-            </motion.div>
-          ))}
+        {/* Experience Section */}
+        <section id="experience" className="py-16 px-4 bg-white dark:bg-gray-900">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Work Experience</h2>
+            <div className="space-y-8">
+              {experience.map((exp, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">{exp.title}</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-medium">{exp.org}</p>
+                  <p className="mt-2 text-gray-600 dark:text-gray-400">{exp.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </section>
 
-        {/* Certificates */}
-        <section id="certificates" className="p-10 max-w-6xl mx-auto">
-          <h3 className="text-3xl font-semibold mb-8 text-center">Certifications</h3>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {certificates.map((cert, idx) => (
-              <motion.a
-                key={idx}
-                href={cert.link}
-                target="_blank"
-                rel="noreferrer"
-                className="block p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <div className="aspect-video relative mb-3 overflow-hidden rounded-md border border-gray-200 dark:border-gray-700">
-                  <img
-                    src={cert.image}
-                    alt={cert.title}
-                    className="w-full h-full object-cover"
+        {/* Certificates Section */}
+        <section id="certificates" className="py-16 px-4 bg-gray-50 dark:bg-gray-800">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Certificates</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {certificates.map((cert, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="p-6">
+                    <div className="flex items-center mb-4">
+                      <img src={cert.logo} alt={cert.title} className="w-12 h-12 object-contain mr-4" />
+                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{cert.title}</h3>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{cert.desc}</p>
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                    >
+                      View Certificate
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Open Source Section */}
+        <section id="oss" className="py-16 px-4 bg-white dark:bg-gray-900">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Open Source Contributions</h2>
+            <div className="space-y-6">
+              {oss.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">{item.title}</h3>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300">{item.desc}</p>
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 text-blue-500 hover:underline"
+                  >
+                    View Contribution →
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Achievements Section */}
+        <section id="achievements" className="py-16 px-4 bg-gray-50 dark:bg-gray-800">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Achievements</h2>
+            <div className="space-y-6">
+              {achievements.map((ach, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{ach.title}</h3>
+                  <p className="mt-2 text-gray-600 dark:text-gray-300">{ach.desc}</p>
+                  <a
+                    href={ach.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                  >
+                    Learn More
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Resume Section */}
+        <section id="resume" className="py-16 px-4 bg-white dark:bg-gray-900">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-center">Resume</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto text-center">
+              {resume.desc}
+            </p>
+            
+            {/* Resume Preview Box */}
+            <div className="mb-8 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg p-4">
+              <div className="overflow-x-auto overflow-y-auto" style={{ maxHeight: '600px' }}>
+                <div className="inline-block min-w-full">
+                  <iframe
+                    src={`${resume.url}#toolbar=0&navpanes=0&scrollbar=1`}
+                    className="w-full bg-white"
+                    style={{ 
+                      minWidth: '800px',
+                      height: '600px',
+                      border: 'none',
+                      borderRadius: '8px'
+                    }}
+                    title="Resume Preview"
                   />
                 </div>
-                <div className="flex items-center justify-center gap-2 mb-1">
-                  <img src={cert.logo} alt="logo" className="h-5 w-5" />
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white text-center">
-                    {cert.title}
-                  </h4>
-                </div>
-                <p className="text-sm text-center mt-1 text-gray-700 dark:text-gray-300">
-                  {cert.desc}
-                </p>
-                <p className="text-center mt-2 text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400">
-                  View Certificate
-                </p>
-              </motion.a>
-            ))}
-          </div>
-        </section>
+              </div>
+            </div>
 
-        {/* OSS Contributions */}
-        <section id="oss" className="p-10 max-w-7xl mx-auto">
-          <h3 className="text-3xl font-semibold mb-6 text-center">Open Source Contributions</h3>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {oss.map((contribution, idx) => (
-              <motion.div
-                key={idx}
-                className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h4 className="text-xl font-semibold mb-2">{contribution.title}</h4>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">{contribution.desc}</p>
-                <a
-                  href={contribution.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
-                >
-                  <Github className="mr-2" size={20} />
-                  View Contribution
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section
-          id="testimonials"
-          className="p-10 max-w-4xl mx-auto"
-        >
-          <h3 className="text-3xl font-semibold mb-6">Testimonials</h3>
-          {testimonials.map((t, idx) => (
-            <motion.blockquote
-              key={idx}
-              className="mb-6 p-6 bg-gray-200 dark:bg-gray-800 rounded shadow"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="italic mb-2">"{t.quote}"</p>
-              <footer className="text-right font-semibold">
-                — {t.name}, <span className="text-gray-600 dark:text-gray-400">{t.title}</span>
-              </footer>
-            </motion.blockquote>
-          ))}
-        </section>
-
-        {/* Contact section */}
-        <section id="contact" className="p-10 max-w-4xl mx-auto text-center mb-20">
-          <h3 className="text-3xl font-semibold mb-6">Let's Connect</h3>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            I'm always excited to collaborate on innovative projects and discuss new opportunities. 
-            Whether you have a project in mind or just want to connect, feel free to reach out!
-          </p>
-          <div className="flex flex-col items-center gap-4">
-            <a
-              href="mailto:ganasekharkalla@gmail.com"
-              className="inline-flex items-center gap-2 text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              ganasekharkalla@gmail.com
-            </a>
-            <div className="flex gap-4 mt-4">
+            {/* Download Button */}
+            <div className="text-center">
               <a
-                href="https://github.com/ganasekhar-gif"
-                target="_blank"
-                rel="noreferrer"
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                href={resume.url}
+                download="Ganasekhar_Kalla_Resume.pdf"
+                onClick={(e) => {
+                  // Force download by creating a temporary link
+                  const link = document.createElement('a');
+                  link.href = resume.url;
+                  link.download = 'Ganasekhar_Kalla_Resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                  e.preventDefault();
+                }}
+                className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors cursor-pointer"
               >
-                <Github size={24} />
-              </a>
-              <a
-                href="https://linkedin.com/in/ganasekhark"
-                target="_blank"
-                rel="noreferrer"
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
-              >
-                <Linkedin size={24} />
+                Download Resume
               </a>
             </div>
           </div>
         </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-16 px-4 bg-gray-50 dark:bg-gray-800">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 max-w-2xl mx-auto">
+              Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible!
+            </p>
+            <p className="text-base text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto italic">
+              Let's connect and build something amazing together — whether it's discussing AI innovations, collaborating on data science projects, or exploring new opportunities in tech!
+            </p>
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://github.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                aria-label="GitHub"
+              >
+                <Github size={28} />
+              </a>
+              <a
+                href="https://linkedin.com/in/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={28} />
+              </a>
+              <a
+                href="https://www.kaggle.com/kallaganasekhar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                aria-label="Kaggle"
+              >
+                <SiKaggle size={28} />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-gray-800 text-white py-8 px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <p>© {new Date().getFullYear()} Ganasekhar Kalla. All rights reserved.</p>
+            <p className="mt-2 text-gray-400 text-sm">
+              Built with Next.js, Tailwind CSS, and ❤️
+            </p>
+          </div>
+        </footer>
       </div>
     </div>
   );
